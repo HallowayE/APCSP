@@ -1,5 +1,9 @@
 import numpy as np
 
+def add(arr, num, lcv, day):
+  num+=arr[lcv][day]
+  return num
+
 i = open("data/prog505d.txt")
 hits = [[]]
 bats = [[]]
@@ -39,8 +43,8 @@ for day in range(len(hits[0])):
   hit = 0
   bat = 0
   for lcv in range(len(hits)-1):
-    hit += hits[lcv][day]
-    bat += bats[lcv][day]
+    hit=add(hits ,hit, lcv, day)
+    bat=add(bats, bat, lcv, day)
   print(hit, f"\t{hit/bat:.2f}")
   tothit+=hit
   
