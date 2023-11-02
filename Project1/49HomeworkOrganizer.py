@@ -1,3 +1,12 @@
+def arrPrint(arr, sort=0):
+  if sort!=0:
+    arr.sort(key=sort)
+  for i in arr:
+    print(i.name)
+  
+  
+  
+
 class Assignment:
   def __init__ (self, name, added, due, importance):
     self.name = name
@@ -29,26 +38,17 @@ while ans!="":
       if i.name == name:
         assignments.remove(i)
   elif ans == "view":
-    for i in assignments:
-      print(i.name)
+    arrPrint(assignments)
     print("How do you want it viewed?")
     viewed = input("alphabetically, date, due, or importance: ")
     if viewed == "alphabetically":
-      assignments.sort(key=Assignment.getName)
-      for i in assignments:
-        print(i.name)
+      arrPrint(assignments, Assignment.getName)
     elif viewed == "date":
-      assignments.sort(key=Assignment.getAdded)
-      for i in assignments:
-        print(i.name, i.added)
+      arrPrint(assignments, Assignment.getAdded)
     elif viewed == "due":
-      assignments.sort(key=Assignment.getDue)
-      for i in assignments:
-        print(i.name, i.due)
+      arrPrint(assignments, Assignment.getDue)
     elif viewed == "importance":
-      assignments.sort(reverse=True, key=Assignment.getImportance)
-      for i in assignments:
-        print(i.name, i.importance)
+      arrPrint(assignments, Assignment.getImportance)
     else:
       print("not an option")
   else:
