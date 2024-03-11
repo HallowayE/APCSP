@@ -18,7 +18,7 @@ for line in i:
   pet.pop(2)
   pet.pop(3)
   pets.append(Pet(pet[0], pet[1], pet[2], pet[3]))
-
+  
 myCute = int(input("What is your ideal cutness? "))
 myNice = int(input("What is your ideal niceness? "))
 myFluff = int(input("What is your ideal fluffiness? "))
