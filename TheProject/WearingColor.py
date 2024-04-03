@@ -37,7 +37,7 @@ for i in range(numP):
   stuName = input(f"Student {i+1}'s name: ")
   stuShirt = input(f"Student {i+1}'s shirt color: ")
   stuPants = input(f"Student {i+1}'s pants color: ")
-  stuOther = input(f"Student {i+1}'s pants color: ")
+  stuOther = input(f"Student {i+1}'s other color: ")
   students.append((stuName, stuShirt, stuPants, stuOther))
 
 color = input("What color would you like to know the percentage of? ")
@@ -46,7 +46,3 @@ percent = perColor(students, numP, color)
 
 print(f"Percentage of people wearing {color}: %.2f%%" % percent)
 print(f"Person(s) with the most {color}: ", mostColor(students, numP, color))
-
-
-
-    
